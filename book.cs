@@ -40,7 +40,12 @@ void createEBooks(std::vector<EBook>& books)
         books.push_back(book); // Добавляем экземпляр в вектор
     }
 }
-
+enum Menu
+{
+    InputBooks=1,
+    PrintBooks,
+    Exit
+}
 // Функция main с псевдоменю
 int main()
 {
@@ -59,15 +64,15 @@ int main()
 
         switch (choice)
         {
-            case 1:
+            case InputBooks:
                 createEBooks(books); // Вызываем функцию для создания книг
                 break;
-            case 2:
+            case PrintBooks:
                 for (const auto&book : books) { // Проходим по всем книгам в векторе
                     printEBook(book); // Вызываем функцию для вывода данных о книге
                 }
                 break;
-            case 0:
+            case Exit:
     std::cout << "Выход из программы." << std::endl; // Сообщение о выходе
     break;
 default:
